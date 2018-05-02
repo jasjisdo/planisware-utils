@@ -13,9 +13,11 @@ method contains on String(substring) {
 }
 //Transform the given string to have the first letter in upper caser and others in lower case. 
 method capitalize on String() {
-	if(this.stringIsNotNull()) {
+	if(this.stringIsNotNull() && this.length > 1) {
 		var text = this.toLowerCase();
 		return text.subString(0, 1).toUpperCase() + text.subString(1, text.length);
+	} else {
+		return this.toUpperCase();
 	}
 	return undefined;
 }
